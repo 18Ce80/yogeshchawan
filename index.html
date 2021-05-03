@@ -1,286 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>welcome to cyberspace</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-/* FONTS
-font-family: 'Hind Guntur', sans-serif;
-font-family: 'Hind Vadodara', sans-serif;
-font-family: 'Gudea', sans-serif;
-font-family: 'Ropa Sans', sans-serif;
-font-family: 'Source Code Pro', monospace;
-font-family: 'Maven Pro', sans-serif;
-font-family: 'Comfortaa', cursive;
-font-family: 'Hind Madurai', sans-serif;
-font-family: 'Asap', sans-serif; 98cfd9
-*/
-
-body {
-    font-family: 'Source Code Pro', monospace;
-	color: #fff;
-	margin: 0;
-    background-color: #7b8bb0;
-}
-h1 {
-	font-size: 64px;
-	font-weight: 300;
-	line-height: 64px;
-	margin-bottom: 0;
-}
-h2 {
-   font-size: 16px;
-   font-weight: 300;
-   text-transform: uppercase;
-}
-h3 {
-    font-size: 22px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-p {
-	margin-bottom: 30px;
-	line-height: 30px;
-}
-img {
-	border: 0;
-}
-
-a:link, a:active,a:visited {
-    color: #ddd;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-    color: #7b8bb0;
-}
-
-main {
-	width: 70%;
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-footer {
-	color: #fff;
-	position: relative;
-	height: 65px;
-	left: 0;
-	bottom: 0;
-	font-size: 14px;
-	background-color: #090f33;
-	width: 100%;
-	padding: 15px;
-}
-
-.button {
-	background-color: #090f33;
-	padding-top: 6px;
-	padding-right: 12px;
-	padding-bottom: 6px;
-	padding-left: 12px;
-	color: #fff;
-	border-radius: 4px;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-nav {
-	text-align: center;
-	margin: 40px;
-}
-
-ul {
-    font-size: 12.5px;
-    line-height: 20px;
-}
-
-.hero {
-	color: #fff;
-	text-align: center;
-	margin-bottom: 20px;
-	padding-top: 160px;
-	padding-bottom: 160px;
-	background-color: #090f33;
-    background-image: url(https://i.pinimg.com/originals/6c/0b/54/6c0b541ca892b09a03813ed2ac674444.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.container {
-	max-width: 1280px;
-	margin-right: auto;
-	margin-left: auto;
-	min-width: 320px;
-}
-.social {
-	float: right;
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-/* timeline code */
-* {
-    box-sizing: border-box;
-}
-
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
-/* Container around content */
-.tlcontainer {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
-
-/* The circles on the timeline */
-.tlcontainer::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #090f33;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* Place the container to the left */
-.tlleft {
-    left: 0;
-}
-
-/* Place the container to the right */
-.tlright {
-    left: 50%;
-}
-
-/* Add arrows to the left container (pointing right) */
-.tlleft::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.tlright::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.tlright::after {
-    left: -16px;
-}
-
-/* The actual content */
-.tlcontent {
-    padding: 20px 30px;
-    background-color:#090f33;
-    position: relative;
-    border-radius: 6px;
-}
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-  
-  /* Full-width containers */
-  .tlcontainer {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-  
-  /* Make sure that all arrows are pointing leftwards */
-  .tlcontainer::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  /* Make sure all circles are at the same spot */
-  .tlleft::after, .tlright::after {
-    left: 15px;
-  }
-  
-  /* Make all right containers behave like the left ones */
-  .tlright {
-    left: 0%;
-  }}
+<html>
+ <head>
+<link type="text/css" rel="stylesheet" href="https://www.dropbox.com/s/trsldt0me90jzs8/resume.css"/>
+<title></title>
 </head>
 <body>
-		<div class="hero">
-			<h1>Yogesh Chawan</h1>
-			<h2>take a step into my world</h2>
-		</div>
-    	<div class="container">
-    <header>
-		<nav>
-            <a href="index.html" class="button">homepage</a>
-			<a href="about1.html" class="button">about</a>
-            <a href="resume1.html" class="button">resume</a>
-            <a href="contact1.html" class="button">contact me</a>
-		</nav>
-    </header>
-		<main role="main">
-			<p align="center">Hello world! I'm Yogesh. I'm a current Diploma Student studying Polytechnic. I intend to graduate and continue to study Computer Science. You're welcome to follow my coding journey on other social media platforms</p>
-	</main>
-    </div>
-    <footer>
-		<div class="container">
-			<div class="social">
-				<a href="http://www.https://github.com/18Ce80"><img src="github.png" height="36" width="36" alt="github logo"></a>
-				<a href=""><img src="download1.jpg" height="36" width="36" alt="linkedin logo"></a>
-				<a href=""><img src="download.png" height="36" width="36" alt="twitter"></a>
-                <a href=""><img src="twitter.png" height="36" width="36" alt="twitter"></a>
-			</div>
-		</div>
-	</footer>
-	
-</body>
+<div id="header">
+<p id="name">Yogesh Chawan</p>
+         <a href="mailto:deepsukhwani@gmail.com" target="_blank"><p id="email">yogeshchawan603@gmail.com</p></a>
+     </div>
+     <div class="left">
+     </div>
+     <div class="right">
+            <h3>CV Highlights</h3>
+            <p>
+            <ul>
+                <li>Learnt basic Python, JavaScript on Codecademy.com.</li>
+                <li>An independent, dedicated, efficient person. These attributes are proved through the series of courses I have taken or I am taking as of now independently through online platforms.</li>
+                <li>Good Communication Skills, Presentation Skills, attitude towards leadership, authorisation and delegation, conflict resolution and negotiation and a very good team worker.</li></ul>
+            </p>
+            <h3>Professional Experience</h3>
+            <h4 id="company-name">Pantaloons Pvt Ltd</h4>
+            <p id="job-title"><strong>Cashier</strong></p>
+            <p id="job-responsibilities">Job Responsbilities</p>
+            <p>
+            <ul>
+                <li>Answer customer queries </li>
+                <li>Provides a positive customer experience with fair, friendly, and courteous service.</li>
+                <li>Processes return transactions.</li>
+                <li>Registers sales on a cash register by scanning items, itemizing and totaling customers' purchase</li></ul>
+            </p>
+            <h3>Educational Qualifications</h3>
+            <table>
+                <tr id="heading">
+                    <td>Qualification</td>
+                    <td>Board</td>
+                    <td>Percentage / Grades</td>
+                    <td>Year</td>
+                </tr>
+                <tr>
+                    <td>S.S.C</td>
+                    <td>Creesent High School</td>
+                    <td>75.57%</td>
+                    <td>2016</td>
+                </tr>
+                <tr>
+                    <td>H.S.S.C (Science Stream)</td>
+                    <td> Fr. Agnel M. Higher Secondary School</td>
+                    <td>78.40%</td>
+                    <td>2018</td>
+                </tr>
+             </table>
+            <h3>Independent Courses</h3>
+            <p>
+            <ul>
+                <li>
+                <span id="course-name">HTML & CSS for Beginners – Web Fundamentals</span> – Codecademy.com</li>
+                <li>
+                <span id="course-name">Python – Fundamentals and Dynamic Programming </span> - Codecademy.com</li>
+                <li>
+                <span id="course-name">JavaScript – Programming Basics, JS Apps and Build Games </span> - Codecademy.com</li>
+                <li>
+                <span id="course-name">CS101: Introduction to Computer Science - Building a Web Crawler</span> - Udacity.com</li>
+                <li>
+                <span id="course-name">CS50x – Introduction to Computer Science I</span> – edX.org & Harvard University</li>
+                <li>
+                <span id="course-name">Calculus One</span> - Ohio State University & Coursera.org</li>
+                <li>
+                <span id="course-name">Introduction to Finance</span> - Coursera.org & University of Michigan</li>
+            </ul>
+            <h3>Technical Skills</h3>
+            <p>
+            <ul>
+                <li>
+                <span id="course-name">Operating Systems:</span> DOS, Windows 98, Windows 2000, Windows XP, Windows NT, Windows Server 2003, Windows Vista, Windows 7, Macintosh Computers (OS X), Linux (Ubuntu, Fedora)</li>
+                <li>
+                <span id="course-name">Application Software:</span> Office 97-2003; Office XP, Office 2007, Office for Mac 2011, iWork ’09, Sage Accounting Software, Sage 50 (Accounting Software), Excel 2003/2007 for Financial Modelling spreadsheets.</li>
+                <li>
+                <span id="course-name">Programming Skills:</span>HTML, CSS, Python, JavaScript, learning C and C++</li></ul>
+            </p>
+           <h3>Personal Information:</h3>
+            <p>
+            <ul>
+                <li>
+                A young, determined hard and smart working person. I believe in task based roles and complete ownership of work.
+                <li>
+                <span id="course-name">Languages Known:</span>English, Hindi, Gujarati and Konkani</li>
+                <li>
+                <span id="course-name">Hobbies:</span>I love reading books / magazines, playing Chess, swimming, listening music, surfing Internet, self-learning through e-courses.</li> </ul>
+            </p>
+            <h3>Other Information</h3>
+            <p>
+            <ul>
+                <li>
+                <span id="course-name">Expected Salary:</span>As per company standards</li>
+                <li>
+                <span id="course-name">Area of Interest:</span>Software Development, Programming, Start-ups, Coding, App Development, Technical Support, Support Engineer, Customer Happiness, Client service, Investment Banking, Corporate Finance, Hedge Funds, Mergers & Acquisitions, Analyst, Equity Research, Business Analysis</li>
+                <li>
+                <span id="course-name">Joining Date:</span>Immediate</li></ul>
+            </p>
+            <h3>Declaration</h3>
+            <p>
+            I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief.</p>
+     </div>
+     <div id="footer"></div>
+    </body>
 </html>
