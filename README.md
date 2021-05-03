@@ -6,7 +6,7 @@
 <body>
 <div id="header">
 <p id="name">Yogesh Chawan</p>
-         <a href="mailto:deepsukhwani@gmail.com" target="_blank"><p id="email">yogeshchawan603@gmail.com</p></a>
+         <a href="mailto:yogeshchawan@gmail.com" target="_blank"><p id="email">yogeshchawan603@gmail.com</p></a>
      </div>
      <div class="left">
      </div>
